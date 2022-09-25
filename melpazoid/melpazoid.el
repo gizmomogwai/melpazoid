@@ -93,8 +93,7 @@ It should only be set to t for themes."
   (require 'pkg-info)        ; to retain cleaner byte-compilation in script mode
   (melpazoid-insert "\n`%s` with package-lint %s:"
                     (buffer-name)
-                    (pkg-info-format-version
-                     (pkg-info-package-version "package-lint")))
+                    (pkg-info-version-info "package-lint"))
   (ignore-errors (kill-buffer "*Package-Lint*"))
   (let ((package-lint-main-file (melpazoid--package-lint-main-file)))
     (ignore-errors (package-lint-current-buffer)))
